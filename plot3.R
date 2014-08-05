@@ -13,6 +13,7 @@ data <- read.csv(".//household_power_consumption.txt",
 data$ts = with(data, strptime(paste(Date, Time), "%d/%m/%Y %H:%M:%S"))
 
 ## Plot chart 3
+par(mar = c(4, 5, 2, 1))
 with(data, plot(ts, Sub_metering_1,
                 ylab = "Energy sub metering",
                 xlab = "",
@@ -25,5 +26,5 @@ legend("topright",
        col = c("black", "red", "blue"))
 
 ## Copy screen device to a PNG file device
-dev.copy(device = png, filename = "plot3.png")
+dev.copy(device = png, filename = "plot3.png", width=480, height=480, res = 42)
 dev.off()

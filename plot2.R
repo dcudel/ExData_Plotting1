@@ -13,11 +13,12 @@ data <- read.csv(".//household_power_consumption.txt",
 data$ts = with(data, strptime(paste(Date, Time), "%d/%m/%Y %H:%M:%S"))
 
 ## Plot chart 2
+par(mar = c(5, 5, 2, 1))
 with(data, plot(ts, Global_active_power,
                 ylab = "Global Active Power (kilowatts)",
                 xlab = "",
                 type = "l"))
 
 ## Copy screen device to a PNG file device
-dev.copy(device = png, filename = "plot2.png")
+dev.copy(device = png, filename = "plot2.png", width=480, height=480)
 dev.off()

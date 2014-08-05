@@ -39,5 +39,5 @@ with(data, plot(ts, Global_reactive_power,
                 type = "l"))
 
 ## Copy screen device to a PNG file device
-dev.copy(device = png, filename = "plot4.png")
+dev.copy(device = png, filename = "plot4.png", width=480, height=480)
 dev.off()
